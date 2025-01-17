@@ -1,7 +1,19 @@
-﻿using OOPTaskDay2;
+﻿
+using OOPTaskDay2;
+
+
+public class InvalidPriceException : Exception
+{
+    public InvalidPriceException(string message) : base(message) { }
+}
+
 
 class Program
+
+
 {
+
+  
     static void Main()
     {
         // Create lists to store properties
@@ -24,12 +36,17 @@ class Program
             Console.Write("Enter Address: ");
             string address = Console.ReadLine();
 
-
             decimal price; 
+
             try
             {
                 Console.Write("Enter Price: ");
                 price = decimal.Parse(Console.ReadLine());
+
+                if (price <= 0)
+                {
+                    throw new InvalidPriceException("Price must be greater than 0.");
+                }
             }
             catch (FormatException)
             {
@@ -37,9 +54,15 @@ class Program
                 i--; 
                 continue;
             }
+            catch (InvalidPriceException ex)
+            {
+                Console.WriteLine("Enter number greater than 0"); // Display custom exception message
+                i--;
+                continue;
+            }
 
 
-            // Create appropriate property object based on type
+           
             Property property;
             if (propertyType == 1)
             {
