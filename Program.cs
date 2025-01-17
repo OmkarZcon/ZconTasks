@@ -34,7 +34,7 @@ class Program
             catch (FormatException)
             {
                 Console.WriteLine("Invalid price. Please enter a valid number.");
-                i--; // Decrement loop counter to re-enter details for the same property
+                i--; 
                 continue;
             }
 
