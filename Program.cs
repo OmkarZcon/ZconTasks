@@ -24,8 +24,20 @@ class Program
             Console.Write("Enter Address: ");
             string address = Console.ReadLine();
 
-            Console.Write("Enter Price: ");
-            decimal price = decimal.Parse(Console.ReadLine());
+
+            decimal price; 
+            try
+            {
+                Console.Write("Enter Price: ");
+                price = decimal.Parse(Console.ReadLine());
+            }
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid price. Please enter a valid number.");
+                i--; // Decrement loop counter to re-enter details for the same property
+                continue;
+            }
+
 
             // Create appropriate property object based on type
             Property property;
