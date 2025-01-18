@@ -1,6 +1,4 @@
-﻿
-using System.Reflection;
-using OOPTaskDay2;
+﻿using OOPTaskDay2;
 
 
 public class InvalidPriceException : Exception
@@ -19,12 +17,11 @@ class Program
     {
 
 
-    
 
         // Create lists to store properties
         List<Property> properties = new List<Property>();
 
-        // Get number of properties to add
+        
         Console.Write("Enter the number of properties to add: ");
         int propertyCount = int.Parse(Console.ReadLine());
 
@@ -41,9 +38,15 @@ class Program
             Console.Write("Enter Address: ");
             string address = Console.ReadLine();
 
-            decimal price; 
 
-            try
+
+
+
+
+            // Exception Handling for Price
+            decimal price;
+             
+            try 
             {
                 Console.Write("Enter Price: ");
                 price = decimal.Parse(Console.ReadLine());
@@ -53,21 +56,31 @@ class Program
                     throw new InvalidPriceException("Price must be greater than 0.");
                 }
             }
-            catch (FormatException)
+            catch (FormatException ex)
             {
+                
+                FileLogger.Log($"FormatException Caught: {ex.Message}");
+                FileLogger.Log($"Stack Trace: {ex.StackTrace}");
+
                 Console.WriteLine("Invalid price. Please enter a valid number.");
-                i--; 
+                i--;
                 continue;
             }
             catch (InvalidPriceException ex)
             {
-                Console.WriteLine("Enter number greater than 0"); // Display custom exception message
+               
+                FileLogger.Log($"InvalidPriceException Caught: {ex.Message}");
+                FileLogger.Log($"Stack Trace: {ex.StackTrace}");
+
+                Console.WriteLine("Enter number greater than 0"); 
                 i--;
                 continue;
             }
 
 
-           
+
+
+            // Create property object
             Property property;
             if (propertyType == 1)
             {
@@ -82,8 +95,12 @@ class Program
             properties.Add(property);
         }
 
+
+
         // Create printer object
         var propertyPrinter = new PropertyPrinter();
+
+
 
         // Display all properties
         Console.WriteLine("\n=== Property Details ===");
@@ -105,6 +122,7 @@ class Program
         // Calculate total portfolio value
         decimal totalValue = properties.Sum(p => p.Price);
         Console.WriteLine($"\nTotal Portfolio Value: {totalValue:C}");
+
 
         // Property type statistics
         int residentialCount = properties.Count(p => p is ResidentialProperty);
