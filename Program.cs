@@ -1,4 +1,5 @@
 ﻿
+using System.Reflection;
 using OOPTaskDay2;
 
 
@@ -16,6 +17,10 @@ class Program
   
     static void Main()
     {
+
+
+    
+
         // Create lists to store properties
         List<Property> properties = new List<Property>();
 
@@ -109,10 +114,20 @@ class Program
         Console.WriteLine($"Total Properties: {properties.Count}");
         Console.WriteLine($"Residential Properties: {residentialCount}");
         Console.WriteLine($"Commercial Properties: {commercialCount}");
+
+
+
+
+
+        // Prints the details of the properties ( Reflections )
+        PropertyInspector.TestReflection();
+
+        
+
     }
 }
 
-// PropertyPrinter Class remains the same
+
 public class PropertyPrinter
 {
     public void PrintPropertyDetails(string propertyDetails)
