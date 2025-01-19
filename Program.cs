@@ -140,7 +140,36 @@ class Program
         // Prints the details of the properties ( Reflections )
         PropertyInspector.TestReflection();
 
-        
+
+
+
+        Console.Write("\nEnter the minimum price to filter properties: ");
+        decimal minPrice = decimal.Parse(Console.ReadLine());
+
+        var filteredProperties = properties.Where(p => p.Price >= minPrice);
+
+        Console.WriteLine($"\nProperties with price >= {minPrice:C}:");
+        foreach (var property in filteredProperties)
+        {
+            Console.WriteLine(property.GetDetails());
+        }
+
+
+
+        // Grouping properties by type
+        var groupedProperties = properties.GroupBy(p => p.GetType().Name);
+
+        Console.WriteLine("\nProperties grouped by type:");
+        foreach (var group in groupedProperties)
+        {
+            Console.WriteLine($"\n{group.Key}:");
+            foreach (var property in group)
+            {
+                Console.WriteLine($"  - {property.Address}, Price: {property.Price:C}");
+            }
+        }
+
+
 
     }
 }
