@@ -1,5 +1,5 @@
 ﻿using OOPTaskDay2;
-
+namespace RealEstate.Core.models;
 
 public class InvalidPriceException : Exception
 {
@@ -21,7 +21,6 @@ class Program
         // Create lists to store properties
         List<Property> properties = new List<Property>();
 
-        
         Console.Write("Enter the number of properties to add: ");
         int propertyCount = int.Parse(Console.ReadLine());
 

@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
 
-namespace OOPTaskDay2
+namespace RealEstate.Core.models
 {
     public static class PropertyInspector
     {

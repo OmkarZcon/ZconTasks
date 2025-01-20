@@ -9,7 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstateApp1", "..\RealEs
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SOLIDTaskDay3", "..\SOLIDTaskDay3\SOLIDTaskDay3.csproj", "{C5C348FD-4647-4C97-B402-438734090CE4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary", "..\ClassLibrary\ClassLibrary.csproj", "{FAD88776-0E88-42FB-B14C-1E9A9322A988}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RealEstate.core", "..\RealEstate.core\RealEstate.core.csproj", "{18E54FB3-AD47-4E77-9318-A6921A147C47}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{C5C348FD-4647-4C97-B402-438734090CE4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C5C348FD-4647-4C97-B402-438734090CE4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C5C348FD-4647-4C97-B402-438734090CE4}.Release|Any CPU.Build.0 = Release|Any CPU
-		{FAD88776-0E88-42FB-B14C-1E9A9322A988}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{FAD88776-0E88-42FB-B14C-1E9A9322A988}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{FAD88776-0E88-42FB-B14C-1E9A9322A988}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{FAD88776-0E88-42FB-B14C-1E9A9322A988}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18E54FB3-AD47-4E77-9318-A6921A147C47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18E54FB3-AD47-4E77-9318-A6921A147C47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18E54FB3-AD47-4E77-9318-A6921A147C47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18E54FB3-AD47-4E77-9318-A6921A147C47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
