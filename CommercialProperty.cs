@@ -1,4 +1,4 @@
-﻿namespace OOPTaskDay2
+﻿namespace RealEstate.Core.models
 {
     public class CommercialProperty : Property
     {
@@ -7,11 +7,9 @@
         {
         }
 
-      
         public override string GetDetails()
         {
             return $"Commercial Property - Address: {Address}, Price: {Price:C}";
         }
     }
-
 }

@@ -1,13 +1,26 @@
 ﻿using OOPTaskDay2;
+namespace RealEstate.Core.models;
+
+public class InvalidPriceException : Exception
+{
+    public InvalidPriceException(string message) : base(message) { }
+}
+
 
 class Program
+
+
 {
+
+  
     static void Main()
     {
+
+
+
         // Create lists to store properties
         List<Property> properties = new List<Property>();
 
-        // Get number of properties to add
         Console.Write("Enter the number of properties to add: ");
         int propertyCount = int.Parse(Console.ReadLine());
 
@@ -24,10 +37,49 @@ class Program
             Console.Write("Enter Address: ");
             string address = Console.ReadLine();
 
-            Console.Write("Enter Price: ");
-            decimal price = decimal.Parse(Console.ReadLine());
 
-            // Create appropriate property object based on type
+
+
+
+
+            // Exception Handling for Price
+            decimal price;
+             
+            try 
+            {
+                Console.Write("Enter Price: ");
+                price = decimal.Parse(Console.ReadLine());
+
+                if (price <= 0)
+                {
+                    throw new InvalidPriceException("Price must be greater than 0.");
+                }
+            }
+            catch (FormatException ex)
+            {
+                
+                FileLogger.Log($"FormatException Caught: {ex.Message}");
+                FileLogger.Log($"Stack Trace: {ex.StackTrace}");
+
+                Console.WriteLine("Invalid price. Please enter a valid number.");
+                i--;
+                continue;
+            }
+            catch (InvalidPriceException ex)
+            {
+               
+                FileLogger.Log($"InvalidPriceException Caught: {ex.Message}");
+                FileLogger.Log($"Stack Trace: {ex.StackTrace}");
+
+                Console.WriteLine("Enter number greater than 0"); 
+                i--;
+                continue;
+            }
+
+
+
+
+            // Create property object
             Property property;
             if (propertyType == 1)
             {
@@ -42,8 +94,12 @@ class Program
             properties.Add(property);
         }
 
+
+
         // Create printer object
         var propertyPrinter = new PropertyPrinter();
+
+
 
         // Display all properties
         Console.WriteLine("\n=== Property Details ===");
@@ -66,6 +122,7 @@ class Program
         decimal totalValue = properties.Sum(p => p.Price);
         Console.WriteLine($"\nTotal Portfolio Value: {totalValue:C}");
 
+
         // Property type statistics
         int residentialCount = properties.Count(p => p is ResidentialProperty);
         int commercialCount = properties.Count(p => p is CommercialProperty);
@@ -74,10 +131,49 @@ class Program
         Console.WriteLine($"Total Properties: {properties.Count}");
         Console.WriteLine($"Residential Properties: {residentialCount}");
         Console.WriteLine($"Commercial Properties: {commercialCount}");
+
+
+
+
+
+        // Prints the details of the properties ( Reflections )
+        PropertyInspector.TestReflection();
+
+
+
+
+        Console.Write("\nEnter the minimum price to filter properties: ");
+        decimal minPrice = decimal.Parse(Console.ReadLine());
+
+        var filteredProperties = properties.Where(p => p.Price >= minPrice);
+
+        Console.WriteLine($"\nProperties with price >= {minPrice:C}:");
+        foreach (var property in filteredProperties)
+        {
+            Console.WriteLine(property.GetDetails());
+        }
+
+
+
+        // Grouping properties by type
+        var groupedProperties = properties.GroupBy(p => p.GetType().Name);
+
+        Console.WriteLine("\nProperties grouped by type:");
+        foreach (var group in groupedProperties)
+        {
+            Console.WriteLine($"\n{group.Key}:");
+            foreach (var property in group)
+            {
+                Console.WriteLine($"  - {property.Address}, Price: {property.Price:C}");
+            }
+        }
+
+
+
     }
 }
 
-// PropertyPrinter Class remains the same
+
 public class PropertyPrinter
 {
     public void PrintPropertyDetails(string propertyDetails)

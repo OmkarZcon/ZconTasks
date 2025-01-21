@@ -1,0 +1,40 @@
+18-01-2025 23:15:19: FormatException Caught: The input string 'dff' was not in a correct format.
+18-01-2025 23:15:19: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 49
+
+18-01-2025 23:15:34: InvalidPriceException Caught: Price must be greater than 0.
+18-01-2025 23:15:34: Stack Trace:    at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 53
+
+
+18-01-2025 23:21:16: FormatException Caught: The input string 'wee' was not in a correct format.
+18-01-2025 23:21:16: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 49
+
+
+18-01-2025 23:21:35: FormatException Caught: The input string 'ewee' was not in a correct format.
+18-01-2025 23:21:35: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 49
+
+19-01-2025 00:15:29: FormatException Caught: The input string 'dsdsd' was not in a correct format.
+19-01-2025 00:15:29: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 49
+
+19-01-2025 00:33:54: FormatException Caught: The input string 'dff' was not in a correct format.
+19-01-2025 00:33:54: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 48
+
+19-01-2025 00:47:50: FormatException Caught: The input string 'eqe' was not in a correct format.
+19-01-2025 00:47:50: Stack Trace:    at System.Number.ThrowFormatException[TChar](ReadOnlySpan`1 value)
+   at System.Number.ParseDecimal[TChar](ReadOnlySpan`1 value, NumberStyles styles, NumberFormatInfo info)
+   at System.Decimal.Parse(String s)
+   at Program.Main() in C:\Users\OmkarB\source\repos\OOPTaskDay2\Program.cs:line 46
